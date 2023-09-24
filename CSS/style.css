@@ -10,6 +10,7 @@
     --cornflower:#E7E9FC;
     --lightslate:#8E8F99;
     --green:#31D0AA;
+    --navybluemodal:rgba(46, 47, 66, 0.40);
     --transition-duration: .25s;
     --animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -398,11 +399,12 @@ footer {
     height: 312px;
     display: flex;
     align-items: center;
+    justify-content:center ;
 }
 
 .end {
     display: flex;
-    align-items: flex-start;
+    justify-content: space-between;
 }
 
 .end-web {
@@ -428,21 +430,16 @@ footer {
 .end-sentence {
     color: var(--cloud);
     width: 264px;
+    margin-top: 18px;
 }
 
-.end-header {
+.end-headers {
     font-family: Roboto;
     font-weight: 500;
     color:var(--white);
-}
-
-/* .end-icons {
-    margin-left: 120px;
-} */
-
-.end-headers {
     margin-bottom: 18px;
-}
+}   
+
 .end-icons-ul {
     margin-top: 8px;
     display: flex;
@@ -458,12 +455,10 @@ footer {
     height: 40px;
     border-radius: 20px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
 }
 
 .end-social-link:hover {
     background-color: var(--green);
-
 }
 
 .end-social-link:focus {
@@ -475,41 +470,47 @@ footer {
     */
 }
 
-/* .end-subscribe {
-    margin-left: 80px;
+.end-subscribe form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-} */
-.footer-form-group {
-    display: inline-flex;
 }
 
 .footer-form input {
-    padding: 0px;
-    margin: 0px;
     height: 40px;
     width: 264px;
     border-radius: 4px;
     border: 1px solid var(--white);
     color: var(--white);
     font-size: 12px;
-    font-family: Roboto;
+    font-weight: 400;
+    line-height: 2; /* 200% */
+    letter-spacing: 0.48px;
     background: transparent;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     transition: all var(--transition-duration) var(--animation-timing-function);
 }
 
-.footer-form-group button {
+.footer-form button {
+    display: inline-flex;
     margin-left: 24px;
     padding: 8px 24px;
+    gap: 16px;
+    border-radius: 4px;
+    background: var(--iris);
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5; /* 150% */
+    letter-spacing: 0.64px;
+    align-items: center;
+    transition: all var(--transition-duration) var(--animation-timing-function);
 }
 
-.footer-form-group .submit {
-
-    }
-    
-
-
-
+.footer-form button:hover {
+    background: var(--ocean);
+}   
 /* portfolio html */
 .filters{
     margin-top: 96px;
@@ -634,6 +635,7 @@ footer {
     font-weight: 400;
 }
 
+/* order service modal */
 .modal {
     background-color: rgba(46, 47, 66, 0.40);
     position: fixed;
@@ -655,6 +657,7 @@ footer {
     pointer-events: none;
 
 }
+
 .modal.is-hidden .modal-content {
     transform: scale(0.5);
     /* transform: translateY(-20px); */
@@ -662,6 +665,8 @@ footer {
 
 
 .modal-content {
+    padding-left:24px;
+    padding-right:24px;
     position: relative;
     width: 408px;
     height: 584px;
@@ -683,7 +688,166 @@ footer {
     position: absolute;
     top: 24px;
     right: 24px;
-    stroke-width: 1px;
     border-color: rgba(0, 0, 0, 0.10);;
     cursor: pointer;
+    fill:var(black);
+    transition: background-color, fill var(--transition-duration) var(--animation-timing-function);
+}
+
+.modal-close:hover {
+    background-color: var(--ocean);
+    fill: var(--white);
+}
+
+.modal-body h4{
+    margin-top: 74px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;/* 150% */
+    letter-spacing: 0.32px;
+    color: var(--navyblue);
+    text-align: center;
+}
+.user-contact {
+    margin-top: 16px;
+}
+
+.user-contact-field {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.user-contact-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;/* 116.667% */
+    letter-spacing: 0.48px;
+    color: var(--lightslate);
+}
+
+.user-contact-field svg {
+    position: absolute;
+    margin-top: 8px;
+    margin-left: 16px;
+    fill: var(--navyblue);
+    transition: fill var(--transition-duration) var(--animation-timing-function);
+}
+
+.user-contact input {
+    display: block;
+    padding-left: 38px;
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid var(--navybluemodal);
+    transition: border var(--transition-duration) var(--animation-timing-function);
+}
+
+.user-contact input:focus, .user-contact textarea:focus, .user-contact input:hover,
+.user-contact textarea:hover {
+    border: 1px solid var(--iris);
+    outline: none;
+}
+
+.user-contact-field:focus-within svg,
+.user-contact-field:hover svg {
+    fill: var(--iris);
+}
+
+.user-contact-comment {
+    margin-top: 8px;
+}
+
+.user-contact textarea {
+    display: block;
+    padding: 8px 16px;
+    width: 360px;
+    height: 120px;
+    resize:none;
+    border-radius: 4px;
+    border: 1px solid var(--navybluemodal);
+    transition: border var(--transition-duration) var(--animation-timing-function);
+}
+
+.user-contact-checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.user-contact-checkbox label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    color: var(--lightslate);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px; /* 116.667% */
+    letter-spacing: 0.48px;
+}
+
+.user-contact-checkbox input {
+    display: none;
+
+}
+
+.user-contact-checkbox label svg {
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--navybluemodal);
+    border-radius: 2px;
+    padding-top: 3px;
+    padding-left: 2px;
+    fill: none;
+    transition: fill var(--transition-duration) var(--animation-timing-function);
+}
+
+.user-contact-checkbox input[type="checkbox"]:checked+label svg {
+    fill: var(--white);
+    background-color: var(--iris);
+}
+
+.user-contact-checkbox label {
+    user-select: none;
+    cursor: pointer;
+}
+
+.user-contact-checkbox label a {
+    text-decoration: underline;
+    color: var(--iris);
+    transition: color var(--transition-duration) var(--animation-timing-function);
+}
+
+.user-contact-checkbox label a:hover {
+    color: var(--ocean);
+}
+
+button.modal-submit {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 24px;
+    text-align: center;
+    border-radius: 4px;
+    padding: 16px 32px;
+    min-width: 169px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    background: var(--iris);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    transition: all var(--transition-duration) var(--animation-timing-function);
+    cursor: pointer;
+}
+
+button.modal-submit:hover{
+    background: var(--ocean);
+}
+
+button.modal-submit:active{
+    background: var(--green);
 }
